@@ -31,6 +31,18 @@ class snake():
                 turtles[num].goto(new_x, new_y)
             turtles[0].fd(20)
 
+class direction():
+
+    def __init__(self):
+        screen.listen()
+        screen.onkey(move_fd, "w")
+        screen.onkey(move_bk, "s")
+        screen.onkey(rotate_lt, "a")
+        screen.onkey(rotate_rt, "d")
+        screen.onkey(clear, "space")
 
 snake.move()
+while screen.listen():
+    direction()
+
 screen.exitonclick()
