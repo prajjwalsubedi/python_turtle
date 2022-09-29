@@ -1,16 +1,17 @@
 import turtle
 import time
-
+start_points = (0, -20, -40)
+turtles = []
+screen = turtle.Screen()
 class snake():
-    def move():
-        turtles = []
+
+    def __init__(self):
         tim = turtle.Turtle()
-        screen = turtle.Screen()
         screen.setup(height=600, width=600)
         screen.bgcolor("black")
         screen.tracer(0)
-
-        start_points = (0, -20, -40)
+        
+    def move():     
         for postion in start_points:
             turtle_i = turtle.Turtle()
             turtle_i.pu()
