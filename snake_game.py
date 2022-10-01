@@ -5,7 +5,10 @@ start_points = (0, -20, -40)
 turtles = []
 screen = turtle.Screen()
 screen.bgcolor("black")
-
+up = 90
+down = 270
+left = 180
+right = 0
 
 class snake():
 
@@ -23,17 +26,21 @@ class snake():
             turtle_i.goto(postion, 0)
             turtles.append(turtle_i)
 
-    def up():
-        turtles[0].seth(90)
+    def up(self):
+        if self.head.heading() != down:
+            turtles[0].seth(up)
 
-    def down():
-        turtles[0].seth(270)
+    def down(self):
+        if self.head.heading() != up:
+            turtles[0].seth(down)
 
-    def left():
-        turtles[0].seth(180)
+    def left(self):
+        if self.head.heading() != right:
+            turtles[0].seth(left)
 
-    def right():
-        turtles[0].seth(0)
+    def right(self):
+        if self.head.heading() != left:
+            turtles[0].seth(right)
 
 
 snake.move()
@@ -47,7 +54,7 @@ screen.update()
 is_game_on = True
 while is_game_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.0)
     for num in range(len(turtles) - 1, 0, -1):
         new_x = turtles[num - 1].xcor()
         new_y = turtles[num - 1].ycor()
