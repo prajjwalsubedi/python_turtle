@@ -34,6 +34,7 @@ class snake():
         if self.head.heading() != up:
             turtles[0].seth(down)
 
+
     def left(self):
         if self.head.heading() != right:
             turtles[0].seth(left)
@@ -50,11 +51,13 @@ screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
+time.sleep(0.1)
+
 screen.update()
 is_game_on = True
 while is_game_on:
     screen.update()
-    time.sleep(0.0)
+    time.sleep(0.1)
     for num in range(len(turtles) - 1, 0, -1):
         new_x = turtles[num - 1].xcor()
         new_y = turtles[num - 1].ycor()
